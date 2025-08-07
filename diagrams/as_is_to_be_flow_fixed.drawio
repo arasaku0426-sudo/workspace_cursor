@@ -1,0 +1,74 @@
+<mxfile host="65bd71144e">
+    <diagram name="業務フロー比較_修正版" id="as_is_to_be_flow_fixed">
+        <mxGraphModel dx="731" dy="1017" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="as_is_title" value="As-Is（現状の業務）" style="text;html=1;fontSize=18;fontColor=#1565C0;fontStyle=1;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="20" width="200" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="to_be_title" value="To-Be（あるべき姿の業務）" style="text;html=1;fontSize=18;fontColor=#2E7D32;fontStyle=1;" parent="1" vertex="1">
+                    <mxGeometry x="600" y="20" width="250" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="as_emp" value="従業員" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#1565C0;fontSize=14;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="80" width="100" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="as_soumu" value="支店総務" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF9C4;strokeColor=#F9A825;fontSize=14;" parent="1" vertex="1">
+                    <mxGeometry x="200" y="80" width="100" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="as_hr" value="本社人事部" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFEBEE;strokeColor=#C62828;fontSize=14;" parent="1" vertex="1">
+                    <mxGeometry x="360" y="80" width="120" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="as_q1" value="規程に関する質問" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#1565C0;endArrow=block;endFill=1;fontSize=12;" parent="1" source="as_emp" target="as_soumu" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="as_a1" value="規程集確認・回答（10～20分）" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#F9A825;endArrow=block;endFill=1;fontSize=12;" parent="1" source="as_soumu" target="as_emp" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="90" y="130" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="as_escalate" value="不明な場合" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#C62828;dashed=1;endArrow=block;endFill=1;fontSize=12;" parent="1" source="as_soumu" target="as_hr" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="as_hr_reply" value="回答" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#C62828;endArrow=block;endFill=1;fontSize=12;" parent="1" source="as_hr" target="as_soumu" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="250" y="130" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="to_emp" value="従業員" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#1565C0;fontSize=14;" parent="1" vertex="1">
+                    <mxGeometry x="600" y="80" width="100" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="to_bot" value="チャットボット" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontSize=14;" parent="1" vertex="1">
+                    <mxGeometry x="980" y="80" width="120" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="to_q1" value="自然言語で質問" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#1565C0;endArrow=block;endFill=1;fontSize=12;" parent="1" source="to_emp" target="to_bot" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="to_a1" value="ナレッジベース検索・即時回答" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#2E7D32;endArrow=block;endFill=1;fontSize=12;" parent="1" source="to_bot" target="to_emp" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="650" y="130" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="to_self" value="自己解決" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#1565C0;dashed=1;endArrow=block;endFill=1;fontSize=12;" parent="1" source="to_emp" target="to_emp" edge="1">
+                    <mxGeometry x="0.0175" relative="1" as="geometry">
+                        <mxPoint x="650" y="160" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="comparison_title" value="業務効率化の効果" style="text;html=1;fontSize=16;fontColor=#FF6F00;fontStyle=1;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="200" width="200" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="effect1" value="• 回答時間：10～20分 → 即座" style="text;html=1;fontSize=12;fontColor=#2E7D32;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="240" width="250" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="effect2" value="• エスカレーション：必要 → 不要" style="text;html=1;fontSize=12;fontColor=#2E7D32;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="260" width="250" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="effect3" value="• 自己解決：困難 → 可能" style="text;html=1;fontSize=12;fontColor=#2E7D32;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="280" width="250" height="20" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
