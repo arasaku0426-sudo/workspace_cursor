@@ -49,7 +49,7 @@ app.post('/api/execute-setup', (req, res) => {
     }
     
     // スクリプトのパスを構築
-    const scriptPath = path.join(__dirname, '..', script);
+    const scriptPath = path.join(__dirname, '..', 'setup', script);
     
     // スクリプトファイルの存在チェック
     if (!fs.existsSync(scriptPath)) {
