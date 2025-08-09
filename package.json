@@ -1,21 +1,23 @@
 {
-  "name": "cursor-setup-tool",
+  "name": "cursor-workspace-root",
   "version": "1.0.0",
-  "description": "Cursor環境セットアップツール - CursorRules自動起動対応",
-  "main": "setup-web/server.js",
+  "description": "Cursor学習プロジェクト - ワークスペースルート",
+  "private": true,
   "scripts": {
-    "start": "node setup-web/server.js",
-    "dev": "nodemon setup-web/server.js",
-    "setup": "bash setup_magic.sh",
-    "magic": "bash setup_magic.sh"
+    "start": "cd setup && bash setup_magic.sh",
+    "setup": "cd setup && bash setup_magic.sh",
+    "magic": "cd setup && bash setup_magic.sh",
+    "install-deps": "cd config && npm install",
+    "web-start": "cd config && npm run start",
+    "web-dev": "cd config && npm run dev"
   },
-  "dependencies": {
-    "express": "^4.18.2"
-  },
-  "devDependencies": {
-    "nodemon": "^3.0.1"
-  },
-  "keywords": ["cursor", "setup", "development", "cursorrules", "automation"],
+  "workspaces": [
+    "config",
+    "setup-web",
+    "translation-app",
+    "mcp-time"
+  ],
+  "keywords": ["cursor", "learning", "setup", "workspace"],
   "author": "Cursor User",
   "license": "MIT"
 }
