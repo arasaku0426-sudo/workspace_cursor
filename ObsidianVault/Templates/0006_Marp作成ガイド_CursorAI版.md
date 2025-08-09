@@ -1,32 +1,63 @@
-# Template ID: 0006 - Cursor to Marp - CursorAI版
+# Template ID: 0006 - Cursor AI統合Marp作成ガイド
 
-CursorのAIアシスタントを使用して、MarkdownファイルからMarpスライドを簡単に生成するワークフローです。
+CursorのAIアシスタント機能を最大限活用して、効率的なMarpスライド生成を実現するワークフローです。
 
-## 📁 ファイル構造
+## 🤖 AI活用の特徴
+
+### CursorAI統合機能
+- **@ファイル参照**: `@Marpスライド生成ルール.md`でルール適用
+- **AI Chat**: リアルタイムでスライド内容生成・修正
+- **Tab補完**: AI支援による高速コーディング
+- **Composer機能**: 複数ファイル同時編集
+
+### 🎯 AI駆動ワークフロー
+
+```mermaid
+graph LR
+    A[元資料] --> B[AI要約]
+    B --> C[構造化]
+    C --> D[Marp生成]
+    D --> E[AI校正]
+    E --> F[完成]
+```
+
+## 📁 Cursor特化ファイル構造
 
 ```
-SampleCursorProject_NEW/
+workspace/
 ├── .cursor/
-│   └── settings.json                  # Cursor設定
-├── .cursorrules                       # Cursor基本ルール
-├── ObsidianVault/
-│   └── Templates/
-│       ├── Marpスライド生成ルール.md          # スライド生成ルール
-│       ├── Marpテンプレート_基本.md           # 基本テンプレート
-│       └── Marp作成ガイド_CursorAI版.md      # このファイル
-├── CursorCourse/
-│   └── Chapter3_Presentation/
-│       └── slides/
-│           └── marp_template.md       # 実習用テンプレート
-└── README.md                          # プロジェクト説明
+│   ├── settings.json                  # AI設定最適化
+│   └── rules.md                       # カスタムルール
+├── .cursorrules                       # AI動作ルール
+├── templates/
+│   ├── @Marpスライド生成ルール.md          # AI参照用ルール
+│   └── @Marpテンプレート_基本.md           # AI参照用テンプレート
+└── slides/
+    ├── draft/                         # AI生成ドラフト置き場
+    └── final/                         # 完成版置き場
 ```
 
-## 🚀 セットアップ
+## 🚀 CursorAI専用セットアップ
 
-### 1. 前提条件
-- [Cursor](https://cursor.sh/)のインストール
-- VS Code拡張機能「Marp for VS Code」の追加
-- 推奨テーマの設定（オプション）
+### 1. Cursor設定最適化
+```json
+// .cursor/settings.json
+{
+  "cursor.ai.model": "claude-3.5-sonnet",
+  "cursor.ai.enableTabCompletion": true,
+  "cursor.ai.enableChat": true,
+  "markdown.marp.enabled": true,
+  "markdown.marp.themes": [
+    "default",
+    "gradient"
+  ]
+}
+```
+
+### 2. AI支援機能設定
+- **Composer**: 複数ファイル編集モード有効化
+- **Chat履歴**: スライド生成プロセスの記録
+- **@ルール参照**: 自動的なルール適用
 
 ### 2. テーマ設定（オプション）
 VS CodeのSettings > Markdown > Marp: Themesに以下を追加：
@@ -43,23 +74,36 @@ https://cunhapaulo.github.io/style/freud.css
 - plato
 - heidegger
 
-## 🎯 基本的な使い方
+## 🎯 CursorAI活用ワークフロー
 
-### Step 1: 入力ファイルの準備
-1. `ObsidianVault/Templates/`に変換したいMarkdownファイルを配置
-2. ファイル名は任意に変更可能
+### Step 1: AI支援による資料分析
+1. **元資料をCursorに読み込み**
+   ```
+   @[資料ファイル名].md の内容を分析してスライド構成を提案してください
+   ```
 
-### Step 2: ルールの適用
-CursorのAIチャットで以下のようにルールを設定：
+2. **AI による構造化提案**
+   - 自動的な章立て提案
+   - 重要度による優先順位付け
+   - スライド枚数の最適化提案
+
+### Step 2: AI統合ルール適用
 ```
-@Marpスライド生成ルール.md を使用してスライドを生成してください
+@Marpスライド生成ルール.md と @Marpテンプレート_基本.md を参照して、
+以下の資料からプロフェッショナルなスライドを生成してください：
+
+[資料内容をペースト]
+
+要件:
+- 聴衆レベル: [初心者/中級者/上級者]
+- 発表時間: [分数]
+- 重点項目: [強調したいポイント]
 ```
 
-### Step 3: スライドの生成
-CursorのAIチャットに以下のように指示：
-```
-@[対象ファイル名].md を元にスライド生成
-```
+### Step 3: AIリアルタイム校正
+- **Tab補完**: コード部分の自動補完
+- **Chat校正**: 「このスライドの表現をより分かりやすく」
+- **Composer**: 複数スライドの同時調整
 
 ## 📋 生成されるスライドの特徴
 
@@ -99,20 +143,69 @@ CursorのAIチャットに以下のように指示：
 ### ルールの調整
 - `Marpスライド生成ルール.md`: 生成ルールの変更
 
-## 📊 活用例
+## 🤖 AI活用実例
 
-### 技術プレゼンテーション
-- エンジニア向け勉強会
-- チーム内技術共有
-- カンファレンス発表
+### Case 1: 技術ドキュメントからスライド生成
+```
+AI指示例:
+「@技術仕様書.md を元に、エンジニア向け15分プレゼン用のスライドを作成。
+実装のポイントとコード例を中心に、視覚的に分かりやすく。」
 
-### ビジネスプレゼンテーション
-- 企画提案
-- 進捗報告
-- 研修資料
+AI出力: 
+- 自動的な技術要素の抽出
+- コードハイライト付きスライド
+- アーキテクチャ図の提案
+```
 
-## 🔗 参考リンク
+### Case 2: 会議資料の効率的変換
+```
+AI指示例:
+「@議事録.md から重要な決定事項を抽出し、
+ステークホルダー向け報告スライドを5枚で作成」
 
+AI出力:
+- 決定事項の自動優先順位付け
+- 視覚的なタイムライン作成
+- アクションアイテムの表組み化
+```
+
+### Case 3: リアルタイム内容調整
+```
+Chat活用:
+- 「このスライドをもっと視覚的に」
+- 「専門用語を初心者向けに調整」  
+- 「グラフを追加して数値を強調」
+→ リアルタイムで内容が改善される
+```
+
+## 💡 CursorAI最適化Tips
+
+### プロンプト最適化
+- **具体的な指示**: 「15分、エンジニア向け、実装重視」
+- **段階的改善**: 「まず骨格を作って、次に詳細を」
+- **@参照活用**: 既存テンプレート・ルールの自動適用
+
+### 効率化テクニック
+- **Composer使用**: 複数スライドを同時編集
+- **Chat履歴**: 過去の生成パターンを再利用
+- **Tab補完**: コード・数式の高速入力
+
+## 🔗 CursorAI関連リンク
+
+- [Cursor公式ドキュメント](https://docs.cursor.com/)
+- [AI Prompt Best Practices](https://docs.cursor.com/prompting)
 - [Marp for VS Code](https://marketplace.visualstudio.com/items?itemName=marp-team.marp-vscode)
-- [Cursor-to-Marp 元リポジトリ](https://github.com/Kumaiu/cursor-to-marp)
-- [Marp公式ドキュメント](https://marp.app/)
+- [Claude 3.5 Sonnet活用ガイド](https://docs.anthropic.com/claude/docs)
+
+---
+
+## 📝 更新履歴
+
+| バージョン | 日付 | 変更内容 | 変更者 |
+|-----------|------|----------|---------|
+| 2.0.0 | 2025-01-28 | CursorAI特化版に全面改訂・AI活用ワークフロー追加 | AI Enhancement |
+| 1.0.0 | 2025-07-15 | 初回作成 | Template Team |
+
+---
+
+最終更新: 2025-01-28 17:30:00 JST

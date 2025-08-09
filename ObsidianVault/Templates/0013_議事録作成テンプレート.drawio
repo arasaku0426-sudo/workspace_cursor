@@ -1,32 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mxfile host="app.diagrams.net" modified="2025-07-08T00:00:00.000Z" agent="AI" version="15.8.8" editor="www.diagrams.net" type="device">
-  <diagram id="MeetingTemplate" name="Template ID: 0013 - Meeting Template">
+<mxfile host="app.diagrams.net" modified="2025-01-28T09:00:00.000Z" agent="AI Enhanced" version="15.8.8" editor="www.diagrams.net" type="device">
+  <diagram id="MeetingTemplate_Enhanced" name="Template ID: 0013 - Enhanced Meeting Visual Template">
     <![CDATA[
-    <mxGraphModel dx="844" dy="529" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" background="#ffffff" math="0">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1400" background="#ffffff" math="0">
       <root>
         <mxCell id="0"/>
         <mxCell id="1" parent="0"/>
-        <mxCell id="2" value="Meeting Title: {{TITLE}}" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1F5FE;strokeColor=#0277BD;" vertex="1" parent="1">
-          <mxGeometry x="20" y="20" width="400" height="50" as="geometry"/>
+        
+        <!-- ヘッダー情報 -->
+        <mxCell id="header-title" value="📋 Meeting: {{TITLE}}" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1F5FE;strokeColor=#0277BD;fontSize=16;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="20" y="20" width="500" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="3" value="Date: {{DATE}}" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF3E0;strokeColor=#F57C00;" vertex="1" parent="1">
-          <mxGeometry x="450" y="20" width="200" height="50" as="geometry"/>
+        
+        <mxCell id="header-date" value="📅 Date: {{DATE}}\n⏰ Time: {{START_TIME}} - {{END_TIME}}" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF3E0;strokeColor=#F57C00;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="540" y="20" width="250" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="4" value="Participants:\n- {{NAME1}}\n- {{NAME2}}\n- {{NAME3}}" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;" vertex="1" parent="1">
-          <mxGeometry x="20" y="90" width="300" height="150" as="geometry"/>
+        
+        <mxCell id="header-location" value="🏢 Location: {{LOCATION}}\n👥 Meeting Type: {{TYPE}}" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFEBEE;strokeColor=#C62828;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="810" y="20" width="250" height="60" as="geometry"/>
         </mxCell>
-        <mxCell id="5" value="Agenda:\n1. {{AGENDA1}}\n2. {{AGENDA2}}\n3. {{AGENDA3}}" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFDE7;strokeColor=#FBC02D;" vertex="1" parent="1">
-          <mxGeometry x="340" y="90" width="300" height="150" as="geometry"/>
+
+        <!-- 参加者情報 -->
+        <mxCell id="participants-present" value="✅ 出席者:\n- {{PRESENT1}} ({{ROLE1}})\n- {{PRESENT2}} ({{ROLE2}})\n- {{PRESENT3}} ({{ROLE3}})" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="20" y="100" width="300" height="120" as="geometry"/>
         </mxCell>
-        <mxCell id="6" value="Discussion Points:\n- {{POINT1}}\n- {{POINT2}}\n- {{POINT3}}" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#7B1FA2;" vertex="1" parent="1">
-          <mxGeometry x="660" y="90" width="300" height="150" as="geometry"/>
+        
+        <mxCell id="participants-absent" value="❌ 欠席者:\n- {{ABSENT1}} ({{REASON1}})\n- {{ABSENT2}} ({{REASON2}})" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFEBEE;strokeColor=#D32F2F;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="340" y="100" width="300" height="120" as="geometry"/>
         </mxCell>
-        <mxCell id="7" value="Key Decisions:\n- {{DECISION1}}\n- {{DECISION2}}\n- {{DECISION3}}" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E0F7FA;strokeColor=#006064;" vertex="1" parent="1">
-          <mxGeometry x="20" y="260" width="450" height="150" as="geometry"/>
+        
+        <mxCell id="meeting-facilitator" value="🎯 進行役: {{FACILITATOR}}\n📝 記録者: {{RECORDER}}\n⏱️ タイムキーパー: {{TIMEKEEPER}}" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#7B1FA2;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="660" y="100" width="300" height="120" as="geometry"/>
         </mxCell>
-        <mxCell id="8" value="Action Items:\n1. {{ACTION1}}\n2. {{ACTION2}}\n3. {{ACTION3}}" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCE4EC;strokeColor=#AD1457;" vertex="1" parent="1">
-          <mxGeometry x="490" y="260" width="470" height="150" as="geometry"/>
+
+        <!-- アジェンダ・進行 -->
+        <mxCell id="agenda-main" value="📋 主要アジェンダ:\n1. {{AGENDA1}} ({{TIME1}}分)\n2. {{AGENDA2}} ({{TIME2}}分)\n3. {{AGENDA3}} ({{TIME3}}分)\n4. {{AGENDA4}} ({{TIME4}}分)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFDE7;strokeColor=#FBC02D;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="20" y="240" width="400" height="140" as="geometry"/>
         </mxCell>
+        
+        <mxCell id="agenda-progress" value="⏳ 進行状況:\n▶️ 現在の議題: {{CURRENT}}\n✅ 完了: {{COMPLETED}}\n⏸️ 保留: {{PENDING}}" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8EAF6;strokeColor=#3F51B5;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="440" y="240" width="280" height="140" as="geometry"/>
+        </mxCell>
+
+        <!-- ディスカッション -->
+        <mxCell id="discussion-points" value="💬 主要な議論:\n• {{DISCUSSION1}}\n  👤 発言者: {{SPEAKER1}}\n• {{DISCUSSION2}}\n  👤 発言者: {{SPEAKER2}}\n• {{DISCUSSION3}}\n  👤 発言者: {{SPEAKER3}}" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#7B1FA2;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="740" y="240" width="320" height="140" as="geometry"/>
+        </mxCell>
+
+        <!-- 決定事項と課題 -->
+        <mxCell id="decisions-made" value="✅ 決定事項:\n1. {{DECISION1}}\n   📅 期限: {{DEC_DATE1}}\n2. {{DECISION2}}\n   📅 期限: {{DEC_DATE2}}\n3. {{DECISION3}}\n   📅 期限: {{DEC_DATE3}}" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E0F7FA;strokeColor=#006064;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="20" y="400" width="400" height="140" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="open-issues" value="❓ 未解決事項:\n• {{ISSUE1}}\n  🔄 次回検討: {{ISSUE1_NEXT}}\n• {{ISSUE2}}\n  🔍 要調査: {{ISSUE2_RESEARCH}}\n• {{ISSUE3}}\n  ⏳ 保留理由: {{ISSUE3_REASON}}" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF3E0;strokeColor=#FF8F00;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="440" y="400" width="360" height="140" as="geometry"/>
+        </mxCell>
+
+        <!-- アクションアイテム -->
+        <mxCell id="action-items" value="🎯 アクションアイテム:\n1. {{ACTION1}}\n   👤 担当: {{OWNER1}} 📅 期限: {{DUE1}}\n   🔴 優先度: {{PRIORITY1}}\n2. {{ACTION2}}\n   👤 担当: {{OWNER2}} 📅 期限: {{DUE2}}\n   🟡 優先度: {{PRIORITY2}}\n3. {{ACTION3}}\n   👤 担当: {{OWNER3}} 📅 期限: {{DUE3}}\n   🟢 優先度: {{PRIORITY3}}" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCE4EC;strokeColor=#AD1457;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="20" y="560" width="500" height="160" as="geometry"/>
+        </mxCell>
+        
+        <!-- フォローアップ -->
+        <mxCell id="follow-up" value="📬 フォローアップ:\n• {{FOLLOWUP1}}\n• {{FOLLOWUP2}}\n• {{FOLLOWUP3}}\n\n📧 議事録配布先:\n- {{RECIPIENT1}}\n- {{RECIPIENT2}}\n- {{RECIPIENT3}}" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#4CAF50;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="540" y="560" width="260" height="160" as="geometry"/>
+        </mxCell>
+
+        <!-- 次回会議 -->
+        <mxCell id="next-meeting" value="📅 次回会議:\n日時: {{NEXT_DATE}}\n場所: {{NEXT_LOCATION}}\n\n🎯 次回重点議題:\n- {{NEXT_TOPIC1}}\n- {{NEXT_TOPIC2}}\n\n📋 事前準備:\n- {{PREP1}}\n- {{PREP2}}" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#9C27B0;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="820" y="560" width="280" height="160" as="geometry"/>
+        </mxCell>
+
+        <!-- 統計・メトリクス -->
+        <mxCell id="meeting-metrics" value="📊 会議メトリクス:\n⏱️ 予定時間: {{PLANNED_TIME}}分\n⏰ 実際時間: {{ACTUAL_TIME}}分\n📈 効率性: {{EFFICIENCY}}%\n\n💬 発言統計:\n{{SPEAKER1}}: {{SPEAK_TIME1}}分\n{{SPEAKER2}}: {{SPEAK_TIME2}}分" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EFEBE9;strokeColor=#5D4037;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="400" width="240" height="160" as="geometry"/>
+        </mxCell>
+
+        <!-- 品質チェック -->
+        <mxCell id="quality-check" value="✅ 品質チェック:\n□ 全議題を網羅\n□ 決定事項が明確\n□ 責任者・期限設定\n□ 次回準備事項明記\n\n📝 記録者確認:\n署名: {{RECORDER_SIGN}}\n日付: {{RECORD_DATE}}" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1F5FE;strokeColor=#0277BD;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="580" width="240" height="140" as="geometry"/>
+        </mxCell>
+
+        <!-- フロー矢印 -->
+        <mxCell id="flow1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FF6B35;strokeWidth=2;" edge="1" parent="1" source="agenda-main" target="discussion-points">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="flow2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#4CAF50;strokeWidth=2;" edge="1" parent="1" source="discussion-points" target="decisions-made">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="flow3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#2196F3;strokeWidth=2;" edge="1" parent="1" source="decisions-made" target="action-items">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <mxCell id="flow4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#9C27B0;strokeWidth=2;" edge="1" parent="1" source="action-items" target="next-meeting">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
       </root>
     </mxGraphModel>
     ]]>
